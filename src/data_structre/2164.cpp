@@ -1,5 +1,8 @@
+//
+// Created by qkrtn on 2021-11-20.
+// Link : https://www.acmicpc.net/problem/2164
+
 #include <iostream>
-#include <string>
 #include <queue>
 
 using namespace std;

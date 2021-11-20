@@ -1,3 +1,7 @@
+//
+// Created by tnsgud on 2021-11-17.
+// Link : https://www.acmicpc.net/problem/10866
+
 #include <iostream>
 #include <string>
 #include<deque>
