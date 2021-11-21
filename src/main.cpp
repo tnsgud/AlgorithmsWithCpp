@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <queue>
 
 using namespace std;
@@ -8,23 +7,30 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int length;
-    cin >> length;
+    int N, K;
 
-    queue<int> cards;
+    cin >> N >> K;
+    queue<int> Q;
+    for (int i = 0; i < N; ++i) Q.push(i + 1);
 
-    for (int i = 0; i < length; ++i) {
-        cards.push(i+1);
+    cout << "<";
+
+    while(true) {
+
+        for (int i = 1; i < K; ++i) {
+            Q.push(Q.front());
+            Q.pop();
+        }
+
+        cout << Q.front();
+        Q.pop();
+
+        if(!Q.empty())
+            cout << ", ";
+        else break;
     }
 
-    while(cards.size() != 1) {
-        cards.pop();
-        int num = cards.front();
-        cards.pop();
-        cards.push(num);
-    }
-
-    cout << cards.front() << '\n';
+    cout << ">";
 
     return 0;
 }
