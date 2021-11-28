@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2021-11-28.
+// Link : https://www.acmicpc.net/problem/10950
+
 #include <iostream>
 
 using namespace std;
@@ -14,3 +18,4 @@ int main() {
 
     return 0;
 }
+
