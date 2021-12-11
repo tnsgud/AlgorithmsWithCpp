@@ -6,26 +6,13 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int N, ans, cnt;
-    cin >> N;
-
-    if (N < 5) {
-        if (N % 2 != 0) {
-            ans = -1;
-        } else {
-            ans = (N / 2);
+    while(true) {
+        int a, b;
+        cin >> a >> b;
+        if(a == 0 && b == 0) {
+            break;
+        }else {
+            cout << a+b << '\n';
         }
-    } else {
-        cnt = N / 5;
-        N = N % 5;
-        if (N % 2 == 0) {
-            cnt += N / 2;
-        } else {
-            cnt += (N + 5) / 2 - 1;
-        }
-
-        ans = cnt;
     }
-
-    cout << ans;
 }
