@@ -13,7 +13,6 @@ int main() {
         int a, idx;
         cin >> a;
         idx = ((a % 42) == 0 ? 0 : a % 42 - 1);
-
         if (cnt[idx] == 0) {
             cnt[idx]++;
         }
