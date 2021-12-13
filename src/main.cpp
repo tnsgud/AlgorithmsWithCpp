@@ -12,6 +12,7 @@ int main() {
     for (int i = 0; i < 10; i++) {
         int a, idx;
         cin >> a;
+
         idx = ((a % 42) == 0 ? 0 : a % 42 - 1);
 
         if (cnt[idx] == 0) {
