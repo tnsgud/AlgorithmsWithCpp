@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2021-12-16.
+// Link : https://www.acmicpc.net/problem/8958
+
 #include <iostream>
 #include <string>
 
@@ -9,7 +13,7 @@ int main() {
 
     int N;
     cin >> N;
-    auto *q = new string[N];
+    string *q = new string[N];
 
     for (int i = 0; i < N; ++i) {
         cin >> q[i];
