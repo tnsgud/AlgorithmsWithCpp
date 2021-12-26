@@ -12,8 +12,8 @@ int main() {
     string S;
     cin >> S;
 
-    for (int i = 0; i < S.length(); ++i) {
-        auto c = toupper(S.at(i));
+    for (char i : S) {
+        auto c = toupper(i);
         cnt[c-65]++;
 
         if (max <= cnt[c-65]) {
