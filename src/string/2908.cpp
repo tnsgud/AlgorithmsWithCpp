@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2021-12-27.
+// Link : https://www.acmicpc.net/problem/2908
+
 #include <iostream>
 #include <string>
 
