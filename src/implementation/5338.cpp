@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2022-01-10.
+// Link : https://www.acmicpc.net/problem/5338
+
 #include <iostream>
 
 using namespace std;
