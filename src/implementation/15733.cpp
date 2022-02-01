@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2022-01-31.
+// Link : https://www.acmicpc.net/problem/15733
+
 #include <iostream>
 
 using namespace std;
@@ -6,11 +10,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int N;
-
-    cin >> N;
-
-    cout << N * (N - 1) << '\n';
+    cout << "I'm Sexy";
 
     return 0;
 }
