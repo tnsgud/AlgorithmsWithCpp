@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2022-02-16.
+// Link : https://www.acmicpc.net/problem/22193
+
 #include <iostream>
 #include <string>
 
@@ -39,4 +43,4 @@ int main() {
     }
 
     return 0;
-}
+}z
