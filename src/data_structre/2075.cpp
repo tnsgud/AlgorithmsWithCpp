@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2022-03-20.
+// Link : https://www.acmicpc.net/problem/2075
+
 #include <bits/stdc++.h>
 
 using namespace std;
