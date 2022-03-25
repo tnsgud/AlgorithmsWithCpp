@@ -1,3 +1,7 @@
+//
+// Created by qkrtn on 2022-03-25.
+// Link : https://www.acmicpc.net/problem/1260
+
 #include <iostream>
 #include <vector>
 #include <queue>
