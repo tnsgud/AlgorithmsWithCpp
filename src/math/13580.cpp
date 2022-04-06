@@ -1,3 +1,7 @@
+//
+// Created by soon on 2022-04-06.
+// Link : https://www.acmicpc.net/problem/13580
+
 #include <iostream>
 #include <algorithm>
 
