@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -7,11 +6,18 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    double a;
-    cin >> a;
+    int n, a = 0, b = 0;
+    cin >> n;
 
-    cout.precision(10);
-    cout << a * a * sqrt(3) / 4;
+    if (n / 10 > 10) {
+        a = n/100;
+        b = n%100;
+    } else {
+        a = n/10;
+        b = n%10;
+    }
+
+    cout << a + b;
 
     return 0;
 }
