@@ -6,18 +6,26 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n, a = 0, b = 0;
-    cin >> n;
+    int cnt = 0;
 
-    if (n / 10 > 10) {
-        a = n/100;
-        b = n%100;
-    } else {
-        a = n/10;
-        b = n%10;
+    for (int i = 0; i < 6; ++i) {
+        char s;
+        cin >> s;
+        if(s == 'W') {
+            cnt++;
+        }
     }
 
-    cout << a + b;
+    if(cnt >4) {
+        cout << 1;
+    }else if(cnt > 2) {
+        cout << 2;
+    }else if(cnt > 0) {
+        cout << 3;
+    }else {
+        cout << -1;
+    }
+
 
     return 0;
 }
