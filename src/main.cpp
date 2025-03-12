@@ -1,49 +1,61 @@
 #include <iostream>
-#include <queue>
+#include <vector>
 
 using namespace std;
 
-struct compare {
-    bool operator()(int o1, int o2) {
-        int first_abs = abs(o1);
-        int second_abs = abs(o2);
+int min(int num1, int num2) {
+    return num1 <= num2 ? num1 : num2;
+}
 
+int max(int num1, int num2) {
+    return num1 >= num2 ? num1 : num2;
+}
 
-        if(first_abs == second_abs) {
-            return o1 > o2;
-        }
-
-        return first_abs > second_abs;
+int gcd(int num1, int num2) {
+    if(num2 == 0) {
+        return num1;
     }
-};
 
+    return gcd(num2, num1 % num2);
+}
+
+int lcm(int num1, int num2) {
+    return num1 * num2 / gcd(min(num1, num2), max(num1, num2));
+}
+
+vector<int> solution(int numer1, int denom1, int numer2, int denom2) {
+    vector<int> answer;
+
+    int lcm1 = lcm(denom1, denom2);
+
+    int val1 = lcm1/denom1;
+    int val2 = lcm1/denom2;
+
+    int num1 =  numer1 * val1 + numer2 * val2;
+    int num2 = lcm1;
+    
+    
+
+    answer.push_back(num1);
+    answer.push_back(num2);
+
+    if(answer[0] % answer[1] == 0) {
+        answer[0] = answer[0] / answer[1];
+        answer[1] = 1;
+    } 
+
+
+
+    return answer;
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
+    cout.tie(nullptr); 
 
-    priority_queue<int, vector<int>, compare> pq;
-
-    int N;
-    cin >> N;
-
-    for (int i = 0; i < N; ++i) {
-       int num;
-       cin >> num;
-
-       if(num == 0) {
-           if(pq.empty()) {
-               cout << "0\n";
-               continue;
-           }
-
-           cout << pq.top() << '\n';
-           pq.pop();
-           continue;
-       }
-
-        pq.push(num);
+    for (auto i : solution(1,2,1,2)) {
+        cout << i << ' ';
     }
 
     return 0;
