@@ -13,8 +13,5 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr); 
 
-    cout << solution(3, 4) << '\n';
-    cout << solution(27, 19) << '\n';
-
     return 0;
 }
