@@ -3,8 +3,10 @@
 
 using namespace std;
 
-vector<int> solution(int n) {
-    vector<int> answer;
+int solution(int n) {
+    int answer = n / 7;
+
+    if(n % 7 != 0) answer++;
 
     return answer;
 }
