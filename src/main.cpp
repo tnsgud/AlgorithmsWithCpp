@@ -3,14 +3,15 @@
 
 using namespace std;
 
-int solution(int n) {
-    int answer = n / 7;
-
-    if(n % 7 != 0) answer++;
-
+vector<int> solution(vector<int> num_list) {
+    vector<int> answer;
+    
+    for(int i = num_list.size() - 1; 0 <= i; i--) {
+        answer.push_back(num_list[i]);
+    }
+    
     return answer;
 }
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
