@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+double solution(vector<int> numbers) {
+    double total = 0;
+    double answer = 0;
+
+    for(int i : numbers) {
+        total += i;
+    }
+
+    answer = total / numbers.size();
+
+    return answer;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr); 
+
+    return 0;
+}
