@@ -4,11 +4,12 @@
 
 using namespace std;
 
-string solution(string my_string) {
-    string answer = "";
+vector<int> solution(vector<int> num_list) {
+    vector<int> answer = vector<int>(2, 0);
 
-    for(int i = my_string.size() - 1; 0 <= i; i--) {
-        answer += my_string[i];
+    for(int num : num_list) {
+        if(num % 2 == 0) answer[0]++;
+        else if(num % 2 != 0) answer[1]++;
     }
 
     return answer;
