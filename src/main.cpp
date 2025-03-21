@@ -4,12 +4,13 @@
 
 using namespace std;
 
-vector<int> solution(vector<int> num_list) {
-    vector<int> answer = vector<int>(2, 0);
+string solution(string my_string, int n) {
+    string answer = "";
 
-    for(int num : num_list) {
-        if(num % 2 == 0) answer[0]++;
-        else if(num % 2 != 0) answer[1]++;
+    for(char c:my_string) {
+        for (int i = 0; i < n; i++) {
+            answer += c;
+        }
     }
 
     return answer;
