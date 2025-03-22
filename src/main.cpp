@@ -4,12 +4,12 @@
 
 using namespace std;
 
-string solution(string my_string, int n) {
-    string answer = "";
+int solution(int n) {
+    int answer = 0;
 
-    for(char c:my_string) {
-        for (int i = 0; i < n; i++) {
-            answer += c;
+    for(int i = 1; i <= n; i++) {
+        if(n%i == 0) {
+            answer++;
         }
     }
 
