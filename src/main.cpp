@@ -1,25 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <map>
 
 using namespace std;
 
-int solution(int n) {
-    int answer = 0;
-
-    for(int i = 1; i <= n; i++) {
-        if(n%i == 0) {
-            answer++;
-        }
+int combi(int n, int r)
+{
+    if (r == 0 || n == 1 || n <= r)
+    {
+        return 1;
     }
 
+    return combi(n - 1, r) + combi(n - 1, r - 1);
+}
+
+int solution(int balls, int share)
+{
+    int answer = combi(balls, share);
     return answer;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+
+    cout << solution(3, 2) << '\n';
 
     return 0;
 }
