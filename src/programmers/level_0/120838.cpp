@@ -69,11 +69,5 @@ int main()
   cin.tie(nullptr);
   cout.tie(nullptr);
 
-  string test = ".... . .-.. .-.. ---";
-
-  cout << solution(test) << '\n';
-
-  cout << test.substr(4) << '\n';
-
   return 0;
 }
