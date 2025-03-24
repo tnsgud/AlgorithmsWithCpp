@@ -5,19 +5,25 @@
 
 using namespace std;
 
-int combi(int n, int r)
+vector<int> solution(vector<int> numbers, string direction)
 {
-    if (r == 0 || n == 1 || n <= r)
+    vector<int> answer;
+    bool isLeft = direction == "left";
+
+    for (int i = isLeft ? 0 : numbers.size() - 1; isLeft ? i < numbers.size() : i > 0; isLeft ? i++ : i--)
     {
-        return 1;
+        int temp = numbers[i];
+        int index = isLeft ? i + 1 : i - 1;
+
+        numbers[i] = numbers[index];
+        numbers[index] = i;
     }
 
-    return combi(n - 1, r) + combi(n - 1, r - 1);
-}
+    for (auto i : numbers)
+    {
+        cout << i << ' ';
+    }
 
-int solution(int balls, int share)
-{
-    int answer = combi(balls, share);
     return answer;
 }
 
@@ -27,7 +33,7 @@ int main()
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    cout << solution(3, 2) << '\n';
+    solution({1, 2, 3}, "right");
 
     return 0;
 }
