@@ -5,23 +5,14 @@
 #include <set>
 
 using namespace std;
-
-vector<int> solution(int n) {
+vector<int> solution(vector<string> strlist)
+{
     vector<int> answer;
 
-    for (int i = 2; 1 < n;)
+    for (string str : strlist)
     {
-        if(n%i == 0) {
-            answer.push_back(i);
-            n /= i;
-            continue;
-        }
-
-        i++;
+        answer.push_back(str.length());
     }
-
-    set<int> temp = set<int>(answer.begin(), answer.end());
-    answer = vector<int>(temp.begin(), temp.end());
 
     return answer;
 }
