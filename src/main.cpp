@@ -5,14 +5,26 @@
 #include <set>
 
 using namespace std;
-vector<int> solution(vector<string> strlist)
-{
-    vector<int> answer;
 
-    for (string str : strlist)
+int solution(vector<int> sides)
+{
+    int answer = 0;
+
+    // sort
+    for (int i = 0; i < sides.size(); i++)
     {
-        answer.push_back(str.length());
+        for (int j = i + 1; j < sides.size(); j++)
+        {
+            if (sides[i] <= sides[j])
+            {
+                int temp = sides[i];
+                sides[i] = sides[j];
+                sides[j] = temp;
+            }
+        }
     }
+
+    answer = sides[0] < (sides[1] + sides[2]) ? 1 : 2;
 
     return answer;
 }
