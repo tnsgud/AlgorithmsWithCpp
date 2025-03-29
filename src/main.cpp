@@ -1,30 +1,19 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <map>
-#include <set>
 
 using namespace std;
 
-int solution(vector<int> sides)
+string solution(string my_string)
 {
-    int answer = 0;
+    string answer = "";
+    int sign = 1;
 
-    // sort
-    for (int i = 0; i < sides.size(); i++)
+    for (char c : my_string)
     {
-        for (int j = i + 1; j < sides.size(); j++)
-        {
-            if (sides[i] <= sides[j])
-            {
-                int temp = sides[i];
-                sides[i] = sides[j];
-                sides[j] = temp;
-            }
-        }
+        sign = (65 <= c && c <= 90) ? 1 : -1;
+        answer += c + 32 * sign;
     }
-
-    answer = sides[0] < (sides[1] + sides[2]) ? 1 : 2;
 
     return answer;
 }
