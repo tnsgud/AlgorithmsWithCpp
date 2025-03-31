@@ -4,16 +4,29 @@
 
 using namespace std;
 
-string solution(string my_string)
+vector<int> solution(int n)
 {
-    string answer = "";
-    int sign = 1;
+    vector<int> answer;
 
-    for (char c : my_string)
+    for (int i = 1; i <= n; i++)
     {
-        sign = (65 <= c && c <= 90) ? 1 : -1;
-        answer += c + 32 * sign;
+        if(n % i == 0) {
+            answer.push_back(i);
+        }
     }
+
+    for (int i = 0; i < answer.size(); i++)
+    {
+        for (int j = i+1; j < answer.size(); j++)
+        {
+            if(answer[i] > answer[j]) {
+                int temp = answer[i];
+                answer[i] = answer[j];
+                answer[j] = temp;
+            }
+        }
+    }
+    
 
     return answer;
 }
