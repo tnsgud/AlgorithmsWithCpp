@@ -4,29 +4,43 @@
 
 using namespace std;
 
-vector<int> solution(int n)
+vector<string> solution(vector<string> quiz)
 {
-    vector<int> answer;
+    vector<string> answer;
+    int startIndex, endIndex, num, signal, quiz_answer;
 
-    for (int i = 1; i <= n; i++)
+    for (string str : quiz)
     {
-        if(n % i == 0) {
-            answer.push_back(i);
-        }
-    }
+        startIndex = num = quiz_answer = 0;
+        signal = 1;
 
-    for (int i = 0; i < answer.size(); i++)
-    {
-        for (int j = i+1; j < answer.size(); j++)
+        while ((endIndex = str.find(" ", startIndex)) != string::npos)
         {
-            if(answer[i] > answer[j]) {
-                int temp = answer[i];
-                answer[i] = answer[j];
-                answer[j] = temp;
+            string s = str.substr(startIndex, endIndex - startIndex);
+
+            if (s == "+")
+            {
+                signal = 1;
             }
+            else if (s == "-")
+            {
+                signal = -1;
+            }
+            else if (s == "=")
+            {
+                startIndex = endIndex + 1;
+                num = stoi(str.substr(startIndex, s.size() - startIndex));
+                answer.push_back(num == quiz_answer ? "O" : "X");
+            }
+            else
+            {
+                num = stoi(s);
+                quiz_answer += num * signal;
+            }
+
+            startIndex = endIndex + 1;
         }
     }
-    
 
     return answer;
 }
@@ -36,6 +50,11 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+
+    for (auto s : solution({"3 - 4 = -3", "5 + 6 = 11"}))
+    {
+        cout << s << '\n';
+    }
 
     return 0;
 }
