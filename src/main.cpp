@@ -1,46 +1,40 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <map>
 
 using namespace std;
 
-vector<int> solution(vector<string> keyinput, vector<int> board)
+string solution(vector<string> participant, vector<string> completion)
 {
-    vector<int> answer = {0, 0};
+    string answer = "";
+    map<string, int> map;
 
-    for (string s : keyinput)
+    for (string p : participant)
     {
-        int moveX = 0, moveY = 0;
-        if (s == "up")
+        if (map.find(p) != map.end())
         {
-            moveY = 1;
-        }
-        else if (s == "down")
-        {
-            moveY = -1;
-        }
-        else if (s == "left")
-        {
-            moveX = -1;
-        }
-        else if (s == "right")
-        {
-            moveX = 1;
+            map[p] = map[p] + 1;
+            continue;
         }
 
-        answer[0] += moveX;
-        answer[1] += moveY;
+        map.insert({p, 1});
     }
 
-    if (answer[0] > board[0] / 2)
+    for (string c : completion)
     {
-        answer[0] = board[0] / 2;
+        map[c] = map[c] - 1;
     }
 
-    if (answer[1] > board[1] / 2)
+    for (auto pair : map)
     {
-        answer[1] = board[1] / 2;
+        if (pair.second > 0)
+        {
+            answer = pair.first;
+            break;
+        }
     }
+
     return answer;
 }
 
